@@ -104,6 +104,29 @@ body{
   opacity: .6;
 }
 
+/* Header PLAY button */
+header.hint{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header.hint .play-button{
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: .18em;
+  opacity: 0.95;
+}
+
+header.hint .play-button:hover{
+  border-color: rgba(255,255,255,.35);
+}
+
 /* =========================
    FV
    ========================= */
@@ -328,4 +351,3 @@ footer span{
     right: 10%;
   }
 }
-body { outline: 6px solid red; }
