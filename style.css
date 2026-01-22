@@ -25,6 +25,21 @@ html,body{
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
+/* =========================
+   GLOBAL TEXT OUTLINE
+   全テキスト：白文字＋黒フチ
+   ========================= */
+body{
+  text-shadow:
+    -1px -1px 0 rgba(0,0,0,.9),
+     1px -1px 0 rgba(0,0,0,.9),
+    -1px  1px 0 rgba(0,0,0,.9),
+     1px  1px 0 rgba(0,0,0,.9),
+     0px -1px 0 rgba(0,0,0,.9),
+     0px  1px 0 rgba(0,0,0,.9),
+    -1px  0px 0 rgba(0,0,0,.9),
+     1px  0px 0 rgba(0,0,0,.9);
+}
 /* 蜈ｱ騾夲ｼ壻ｸｭ螟ｮ蟇�○��ｪｭ縺ｿ繧�☆縺�ｹ� */
 .section{
   position: relative;
@@ -323,3 +338,4 @@ footer span{
     right: 10%;
   }
 }
+body { outline: 6px solid red; }
