@@ -1,0 +1,325 @@
+/* =========================
+   FINAL CSS (center + PC strong)
+   ========================= */
+:root{
+  --bg:#000;
+  --fg:#fff;
+  --muted: rgba(255,255,255,.78);
+  --muted2: rgba(255,255,255,.62);
+  --accent: #ff2a2a;
+
+  /* PC縺ｧ蠑ｱ縺剰ｦ九∴繧句次蝗��晏ｹ�′迢ｭ縺吶℃�倶ｽ咏區驕主､�
+     竊� 譛螟ｧ蟷�ｒ荳翫￡縲∽ｽ咏區繧�"驕ｩ蠎ｦ"縺ｫ */
+  --maxw: 980px;
+  --padX: clamp(16px, 4vw, 36px);
+  --padY: clamp(56px, 7vw, 88px);
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0;
+  padding:0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* 蜈ｱ騾夲ｼ壻ｸｭ螟ｮ蟇�○��ｪｭ縺ｿ繧�☆縺�ｹ� */
+.section{
+  position: relative;
+  overflow: hidden;
+  padding: var(--padY) var(--padX);
+}
+
+.container{
+  position: relative;
+  width: min(var(--maxw), 100%);
+  margin: 0 auto;
+  text-align: center; /* 竊蝉ｸｭ螟ｮ蟇�○ */
+  z-index: 2;
+}
+
+/* 譁�ｭ励し繧､繧ｺ繧貞�菴鍋噪縺ｫ蠑輔″荳翫￡�医せ繝槭�/PC荳｡蟇ｾ蠢懶ｼ� */
+.en{
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.65;
+  margin: 0 0 10px 0;
+}
+
+.jp{
+  font-size: clamp(13px, 1.25vw, 16px); /* EN縺ｮ~70%蟶ｯ */
+  line-height: 1.35;
+  color: var(--muted2);
+  margin: 0 0 18px 0;
+}
+
+/* 隕句�縺怜ｼｷ蛹厄ｼ�PC縺ｧ蠑ｱ縺上↑繧峨↑縺�ｼ� */
+.happy{
+  font-weight: 800;
+  letter-spacing: .2px;
+  font-size: clamp(34px, 3.2vw, 54px);
+  line-height: 1.12;
+  margin: 18px 0 10px 0;
+}
+
+.small{
+  font-size: clamp(13px, 1.1vw, 15px);
+  opacity: .75;
+  margin-top: 14px;
+}
+
+.hint{
+  position: fixed;
+  top: 10px;
+  right: 12px;
+  z-index: 10;
+  text-align: right;
+  opacity: 0.7;
+}
+
+.hint .en{
+  font-size: 12px;
+  letter-spacing: .2em;
+}
+
+.hint .jp{
+  display: block;
+  font-size: 10px;
+  opacity: .6;
+}
+
+/* =========================
+   FV
+   ========================= */
+.fv{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.fv .container{
+  max-width: 860px; /* FV縺ｯ蟆代＠蠎�￥ */
+}
+
+/* FV蜀��繝�く繧ｹ繝亥｡翫ｒ窶應ｸｭ螟ｮ縺ｮ蝪岩昴↓縺励※蟇�ｺｦUP */
+.fv-text{
+  display: inline-block;
+  text-align: center;
+  padding: clamp(12px, 2vw, 20px);
+  z-index: 3;
+}
+
+/* 髱呎ｭ｢迪ｫ�郁х蠖ｹ�峨�莉翫�繧ｵ繧､繧ｺ邯ｭ謖� */
+.cat{
+  position:absolute;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  animation: float 4s ease-in-out infinite;
+  opacity: .95;
+  z-index: 1;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.55));
+}
+
+@keyframes float{
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+  100%{ transform: translateY(0); }
+}
+
+/* 菴咲ｽｮ縺ｯ蝗ｺ螳夲ｼ医Λ繝ｳ繝繝�遖∵ｭ｢�� */
+.c1{ top: 8%; left: 10%; }
+.c2{ top: 18%; right: 10%; }
+.c3{ bottom: 10%; left: 12%; }
+
+/* =========================
+   荳ｻ蠖ｹ蜍慕判�医�縺∫賢/繝上ヴ迪ｫ�峨ｒ蟆代＠螟ｧ縺阪￥
+   ========================= */
+.sticker{
+  position:absolute;
+  width: clamp(190px, 18vw, 280px); /* 竊仙､ｧ縺阪￥ */
+  height: auto;
+  z-index: 2;
+  filter: drop-shadow(0 14px 28px rgba(0,0,0,.6));
+  animation: float 3.6s ease-in-out infinite;
+  /* 繧ｯ繝ｪ繝�け繧�ヵ繧ｩ繝ｼ繧ｫ繧ｹ縺ｧ螯吶↑UI縺悟�繧九�繧帝∩縺代ｋ */
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 窶廩uh?窶晏� / 窶廩appy窶晏�縺ｫ蟇�○繧� */
+.sticker.haa{ top: 10%; right: 6%; }
+.sticker.happy{ bottom: 10%; right: 6%; }
+
+/* 縺薙％縺後�1.00縲崎｡ｨ遉ｺ蟇ｾ遲厄ｼ医ヶ繝ｩ繧ｦ繧ｶ縺ｮ繝｡繝�ぅ繧｢UI繧呈ｽｰ縺呻ｼ� */
+video{ outline:none; }
+video::-webkit-media-controls{ display:none !important; }
+video::-webkit-media-controls-panel{ display:none !important; }
+video::-webkit-media-controls-play-button{ display:none !important; }
+video::-webkit-media-controls-timeline{ display:none !important; }
+video::-webkit-media-controls-current-time-display{ display:none !important; }
+video::-webkit-media-controls-time-remaining-display{ display:none !important; }
+video::-webkit-media-controls-mute-button{ display:none !important; }
+video::-webkit-media-controls-volume-slider{ display:none !important; }
+video::-webkit-media-controls-fullscreen-button{ display:none !important; }
+
+/* =========================
+   WHAT�医メ繝｣繝ｼ繝郁レ譎ｯ縺ｯ豼�ｺｦ縺昴�縺ｾ縺ｾ��
+   ========================= */
+.what{
+  padding-top: calc(var(--padY) - 10px);
+}
+
+.chart-bg{
+  position:absolute;
+  inset:0;
+  background: url("images/chart-down.webp") center/cover no-repeat;
+  opacity: 0.12;          /* WHAT 用 */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fv .chart-bg{
+  opacity: 0.18;          /* FV は少し濃く */
+}
+
+.what-cat{
+  position: relative;
+  width: clamp(180px, 20vw, 260px);
+  height: auto;
+  margin: 18px auto 48px auto;
+  display:block;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,.55));
+}
+
+/* =========================
+   WHY / PARTICIPATE
+   ========================= */
+.section-title{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: clamp(12px, 1.2vw, 14px);
+  letter-spacing: .34em;
+  text-transform: uppercase;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  color: rgba(255,255,255,.92);
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.06);
+
+  margin: 0 auto 22px auto;
+}
+
+.section-title::before,
+.section-title::after{
+  content:"";
+  height: 1px;
+  width: clamp(30px, 10vw, 120px);
+  background: rgba(255,255,255,.16);
+}
+
+.block{
+  margin: 0 auto;
+  width: min(820px, 100%);
+}
+
+/* WHY: reality cut */
+.why{
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.06), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 60%);
+}
+
+/* PARTICIPATE: festival hint */
+.participate{
+  background:
+    linear-gradient(120deg,
+      rgba(255,0,0,0.05),
+      rgba(0,255,0,0.03),
+      rgba(0,0,255,0.05)
+    );
+}
+
+
+/* =========================
+   FOOTER / END
+   ========================= */
+footer{
+  padding: 28px var(--padX);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+footer .container{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  gap: 18px;
+  flex-wrap: wrap;
+  text-align:center;
+}
+
+footer a{
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+}
+
+footer a:hover{
+  border-color: rgba(255,255,255,.35);
+}
+
+footer span{
+  color: rgba(255,255,255,.65);
+}
+
+.end{
+  padding: 54px var(--padX) 70px;
+  text-align:center;
+}
+
+.red{ color: var(--accent); }
+
+.big{
+  font-weight: 900;
+  font-size: clamp(22px, 2.6vw, 34px);
+  letter-spacing: .06em;
+  margin: 0 0 10px 0;
+}
+
+/* =========================
+   蜍輔″縺瑚協謇九↑遶ｯ譛ｫ驟肴�
+   ========================= */
+@media (prefers-reduced-motion: reduce){
+  .cat, .sticker{ animation:none; }
+  video{ display:none; }
+}
+
+/* =========================
+   PC縺ｧ窶應ｽ咏區縺悟､壹☆縺寂昴ｒ謚大宛
+   ========================= */
+@media (min-width: 1024px){
+  :root{ --maxw: 1080px; }
+  .fv .container{ max-width: 980px; }
+  .c1{ top: 10%; left: 14%; }
+  .c2{ top: 14%; right: 14%; }
+  .c3{ bottom: 12%; left: 18%; }
+}
+
+/* =========================
+   Mobile: cat-meme-04 collision fix
+   ========================= */
+@media (max-width: 600px){
+  /* cat-meme-04.jpg（.c2）を下にずらす */
+  .c2{
+    top: 32%;
+    right: 10%;
+  }
+}
